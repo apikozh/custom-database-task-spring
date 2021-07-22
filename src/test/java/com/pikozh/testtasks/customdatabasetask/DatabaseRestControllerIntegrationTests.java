@@ -1,11 +1,9 @@
 package com.pikozh.testtasks.customdatabasetask;
 
 import com.pikozh.testtasks.customdatabasetask.configs.DatabaseProperties;
-import com.pikozh.testtasks.customdatabasetask.model.ErrorMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.HttpClientErrorException;
@@ -210,7 +208,7 @@ public class DatabaseRestControllerIntegrationTests extends BaseIntegrationTest 
 		put(tableName, 10, newData);
 		dataLists.set(10, newData);
 
-		for  (int id = 0; id < dataLists.size(); id++) {
+		for (int id = 0; id < dataLists.size(); id++) {
 			List<String> data = dataLists.get(id);
 			List<String> result = getUnsafe(tableName, id, List.class);
 			log.info("result[{}]: {}", id, result);
